@@ -1,2021 +1,2013 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2709
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\f0\fs24 \cf0 type: grid\
-cards:\
-  - type: custom:gap-card\
-    grid_options:\
-      columns: 3\
-      rows: auto\
-  - type: grid\
-    square: false\
-    cards:\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_na_sala\
-            state: "2"\
-        card:\
-          type: conditional\
-          conditions:\
-            - condition: state\
-              entity: group.grupo_sensores_sala\
-              state: "on"\
-          card:\
-            type: custom:paper-buttons-row\
-            styles:\
-              gap: 8px\
-            buttons:\
-              - layout: icon|name\
-                name: Sala\
-                entity: group.grupo_sensores_sala\
-                state_styles:\
-                  "on":\
-                    button:\
-                      background: >-\
-                        linear-gradient(45deg, rgba(207,159,218,0.31) 38%,\
-                        rgba(45,206,253,0.4) 93%)\
-                    name:\
-                      background-color: transparent\
-                      color: black\
-                styles:\
-                  name:\
-                    color: black\
-                    padding: 0 10px\
-                    font-size: 12px\
-                    white-space: nowrap\
-                    overflow: hidden\
-                    text-overflow: ellipsis\
-                  button:\
-                    display: flex\
-                    background-color: transparent\
-                    border-radius: 24px\
-                    color: black\
-                    height: 20px\
-                  icon:\
-                    "--mdc-icon-size": 20px\
-                    color: white\
-                    width: 20px\
-                    height: 20px\
-                    display: flex\
-                    justify-content: center\
-                    align-items: center\
-                    background: black\
-                    border-radius: 50%\
-                    margin-left: "-2px"\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_na_sala\
-            state_not: "2"\
-        card:\
-          type: grid\
-          square: false\
-          cards:\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.janela_grande_sala\
-                  state: open\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Janela Sala\
-                    entity: binary_sensor.janela_grande_sala\
-                    state_styles:\
-                      open:\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg, rgba(207,159,218,0.31) 38%,\
-                            rgba(45,206,253,0.4) 93%)\
-                        name:\
-                          background-color: transparent\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: transparent\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.tuya_sala_mmwave_sensor_presence\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Mmwave Sala\
-                    entity: binary_sensor.tuya_sala_mmwave_sensor_presence\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg, rgba(207,159,218,0.31) 38%,\
-                            rgba(45,206,253,0.4) 93%)\
-                        name:\
-                          background-color: transparent\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: transparent\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-    grid_options:\
-      columns: 5\
-      rows: 1\
-  - type: grid\
-    square: false\
-    cards:\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_na_cozinha\
-            state: "2"\
-        card:\
-          type: conditional\
-          conditions:\
-            - condition: state\
-              entity: group.grupo_sensores_cozinha\
-              state: "on"\
-          card:\
-            type: custom:paper-buttons-row\
-            styles:\
-              gap: 8px\
-            buttons:\
-              - layout: icon|name\
-                name: Cozinha\
-                entity: group.grupo_sensores_cozinha\
-                tap_action: more-info\
-                state_styles:\
-                  "on":\
-                    button:\
-                      background: >-\
-                        linear-gradient(45deg,\
-                        rgba(207,159,218,0.31416316526610644) 38%,\
-                        rgba(45,206,253,0.3981967787114846) 93%)\
-                    name:\
-                      background-color: none\
-                      color: black\
-                styles:\
-                  name:\
-                    color: black\
-                    padding: 0 10px\
-                    font-size: 12px\
-                    white-space: nowrap\
-                    overflow: hidden\
-                    text-overflow: ellipsis\
-                  button:\
-                    display: flex\
-                    background-color: none\
-                    border-radius: 24px\
-                    color: black\
-                    height: 20px\
-                  icon:\
-                    "--mdc-icon-size": 20px\
-                    color: white\
-                    width: 20px\
-                    height: 20px\
-                    display: flex\
-                    justify-content: center\
-                    align-items: center\
-                    background: black\
-                    border-radius: 50%\
-                    margin-left: "-2px"\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_na_cozinha\
-            state_not: "2"\
-        card:\
-          square: false\
-          type: grid\
-          cards:\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.ikea_motion_cozinha_occupancy\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Movimento Cozinha\
-                    entity: binary_sensor.ikea_motion_cozinha_occupancy\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.st_porta_do_frigorifico_contact\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Porta Frigor\'edfico\
-                    entity: binary_sensor.st_porta_do_frigorifico_contact\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: vacuum.conga_11090_spin_revolution_home_wash\
-                  state: cleaning\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Vacuum\
-                    entity: vacuum.conga_11090_spin_revolution_home_wash\
-                    tap_action: more-info\
-                    state_styles:\
-                      cleaning:\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: sensor.estado_maquina_lavar\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: M\'e1quina Lavar\
-                    entity: sensor.estado_maquina_lavar\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: sensor.estado_da_torradeira\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Torradeira\
-                    entity: sensor.estado_da_torradeira\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: sensor.estado_do_fervedor\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Fervedor\
-                    entity: sensor.estado_do_fervedor\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: sensor.estado_do_forno\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Forno\
-                    entity: sensor.estado_do_forno\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: sensor.estado_do_microondas\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Microondas\
-                    entity: sensor.estado_do_microondas\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: sensor.estado_da_airfrier\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Airfrier\
-                    entity: sensor.estado_da_airfrier\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-    grid_options:\
-      columns: 6\
-      rows: 1\
-  - square: false\
-    type: grid\
-    cards:\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_na_despensa\
-            state: "2"\
-        card:\
-          type: conditional\
-          conditions:\
-            - condition: state\
-              entity: group.grupo_sensores_despensa\
-              state: "on"\
-          card:\
-            type: custom:paper-buttons-row\
-            styles:\
-              gap: 8px\
-            buttons:\
-              - layout: icon|name\
-                name: Despensa\
-                entity: group.grupo_sensores_despensa\
-                tap_action: more-info\
-                state_styles:\
-                  "on":\
-                    button:\
-                      background: >-\
-                        linear-gradient(45deg,\
-                        rgba(207,159,218,0.31416316526610644) 38%,\
-                        rgba(45,206,253,0.3981967787114846) 93%)\
-                    name:\
-                      background-color: none\
-                      color: black\
-                styles:\
-                  name:\
-                    color: black\
-                    padding: 0 10px\
-                    font-size: 12px\
-                    white-space: nowrap\
-                    overflow: hidden\
-                    text-overflow: ellipsis\
-                  button:\
-                    display: flex\
-                    background-color: none\
-                    border-radius: 24px\
-                    color: black\
-                    height: 20px\
-                  icon:\
-                    "--mdc-icon-size": 20px\
-                    color: white\
-                    width: 20px\
-                    height: 20px\
-                    display: flex\
-                    justify-content: center\
-                    align-items: center\
-                    background: black\
-                    border-radius: 50%\
-                    margin-left: "-2px"\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_na_despensa\
-            state_not: "2"\
-        card:\
-          square: false\
-          type: grid\
-          cards:\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: sensor.estado_maquina_lavar_roupas\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: M\'e1quina Lavar\
-                    entity: sensor.estado_maquina_lavar_roupas\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: sensor.estado_da_impressora_3d\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Impressora 3D\
-                    entity: sensor.estado_da_impressora_3d\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.motion_dispensa_occupancy\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Despensa\
-                    entity: binary_sensor.motion_dispensa_occupancy\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.st_porta_do_congelador_contact\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Congelador\
-                    entity: binary_sensor.st_porta_do_congelador_contact\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.wc_gato_vibration\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Gato WC\
-                    entity: binary_sensor.wc_gato_vibration\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-    grid_options:\
-      columns: 6\
-      rows: 1\
-  - type: grid\
-    square: false\
-    cards:\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_no_corredor\
-            state: "2"\
-        card:\
-          type: horizontal-stack\
-          cards:\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: group.grupo_sensores_corredor\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Corredor\
-                    entity: group.grupo_sensores_corredor\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_no_corredor\
-            state_not: "2"\
-        card:\
-          type: grid\
-          square: false\
-          cards:\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.lidl_motion_corredor_baixo_occupancy\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Escadas Baixo\
-                    entity: binary_sensor.lidl_motion_corredor_baixo_occupancy\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.motion_corredor_cima_occupancy\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Corredor Cima\
-                    entity: binary_sensor.motion_corredor_cima_occupancy\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.ikea_casa_de_banho_occupancy\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Corredor de Baixo\
-                    entity: binary_sensor.ikea_casa_de_banho_occupancy\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.tuya_porta_de_casa_sensor_contact\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Porta de Casa\
-                    entity: binary_sensor.tuya_porta_de_casa_sensor_contact\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-    grid_options:\
-      columns: 6\
-      rows: 1\
-  - square: false\
-    type: grid\
-    cards:\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_no_wc\
-            state: "2"\
-        card:\
-          type: conditional\
-          conditions:\
-            - condition: state\
-              entity: group.grupo_sensores_wc\
-              state: "on"\
-          card:\
-            type: custom:paper-buttons-row\
-            styles:\
-              gap: 8px\
-            buttons:\
-              - layout: icon|name\
-                name: WC\
-                entity: group.grupo_sensores_wc\
-                tap_action: more-info\
-                state_styles:\
-                  "on":\
-                    button:\
-                      background: >-\
-                        linear-gradient(45deg,\
-                        rgba(207,159,218,0.31416316526610644) 38%,\
-                        rgba(45,206,253,0.3981967787114846) 93%)\
-                    name:\
-                      background-color: none\
-                      color: black\
-                styles:\
-                  name:\
-                    color: black\
-                    padding: 0 10px\
-                    font-size: 12px\
-                    white-space: nowrap\
-                    overflow: hidden\
-                    text-overflow: ellipsis\
-                  button:\
-                    display: flex\
-                    background-color: none\
-                    border-radius: 24px\
-                    color: black\
-                    height: 20px\
-                  icon:\
-                    "--mdc-icon-size": 20px\
-                    color: white\
-                    width: 20px\
-                    height: 20px\
-                    display: flex\
-                    justify-content: center\
-                    align-items: center\
-                    background: black\
-                    border-radius: 50%\
-                    margin-left: "-2px"\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_no_wc\
-            state_not: "2"\
-        card:\
-          type: grid\
-          square: false\
-          cards:\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.janela_psala\
-                  state: open\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Janela WC\
-                    icon: mdi:window-closed\
-                    entity: binary_sensor.janela_psala\
-                    tap_action: more-info\
-                    state_styles:\
-                      open:\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.tuya_wc_mmwave_sensor_presence\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Presen\'e7a WC\
-                    entity: binary_sensor.tuya_wc_mmwave_sensor_presence\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 34px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: sensor.estado_aquecedor_wc\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Aquecedor WC\
-                    entity: sensor.estado_aquecedor_wc\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 34px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-    grid_options:\
-      columns: 5\
-      rows: 1\
-  - square: false\
-    type: grid\
-    cards:\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_na_quarto\
-            state: "2"\
-        card:\
-          type: conditional\
-          conditions:\
-            - condition: state\
-              entity: group.grupo_sensores_quarto\
-              state: "on"\
-          card:\
-            type: custom:paper-buttons-row\
-            styles:\
-              gap: 8px\
-            buttons:\
-              - layout: icon|name\
-                name: Quarto\
-                entity: group.grupo_sensores_quarto\
-                tap_action: more-info\
-                state_styles:\
-                  "on":\
-                    button:\
-                      background: >-\
-                        linear-gradient(45deg,\
-                        rgba(207,159,218,0.31416316526610644) 38%,\
-                        rgba(45,206,253,0.3981967787114846) 93%)\
-                    name:\
-                      background-color: none\
-                      color: black\
-                styles:\
-                  name:\
-                    color: black\
-                    padding: 0 10px\
-                    font-size: 12px\
-                    white-space: nowrap\
-                    overflow: hidden\
-                    text-overflow: ellipsis\
-                  button:\
-                    display: flex\
-                    background-color: none\
-                    border-radius: 24px\
-                    color: black\
-                    height: 20px\
-                  icon:\
-                    "--mdc-icon-size": 20px\
-                    color: white\
-                    width: 20px\
-                    height: 20px\
-                    display: flex\
-                    justify-content: center\
-                    align-items: center\
-                    background: black\
-                    border-radius: 50%\
-                    margin-left: "-2px"\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_na_quarto\
-            state_not: "2"\
-        card:\
-          type: grid\
-          square: false\
-          cards:\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.tuya_quarto_mmwave_sensor_presence\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Quarto\
-                    entity: binary_sensor.tuya_quarto_mmwave_sensor_presence\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: sensor.tuya_quarto_mmwave_sensor_presence_state\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: mmwave quarto\
-                    entity: sensor.tuya_quarto_mmwave_sensor_presence_state\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.janela_do_quarto_contact\
-                  state: open\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Janela Quarto\
-                    entity: binary_sensor.janela_do_quarto_contact\
-                    tap_action: more-info\
-                    state_styles:\
-                      open:\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.cama_pais\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Cama Pais\
-                    entity: binary_sensor.cama_pais\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-    grid_options:\
-      columns: 6\
-      rows: 1\
-  - square: false\
-    type: grid\
-    cards:\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_na_quarto_da_olivia\
-            state: "2"\
-        card:\
-          type: conditional\
-          conditions:\
-            - condition: state\
-              entity: group.grupo_sensores_qolivia\
-              state: "on"\
-          card:\
-            type: custom:paper-buttons-row\
-            styles:\
-              gap: 8px\
-            buttons:\
-              - layout: icon|name\
-                name: Quarto Olivia\
-                entity: group.grupo_sensores_qolivia\
-                tap_action: more-info\
-                state_styles:\
-                  "on":\
-                    button:\
-                      background: >-\
-                        linear-gradient(45deg,\
-                        rgba(207,159,218,0.31416316526610644) 38%,\
-                        rgba(45,206,253,0.3981967787114846) 93%)\
-                    name:\
-                      background-color: none\
-                      color: black\
-                styles:\
-                  name:\
-                    color: black\
-                    padding: 0 10px\
-                    font-size: 12px\
-                    white-space: nowrap\
-                    overflow: hidden\
-                    text-overflow: ellipsis\
-                  button:\
-                    display: flex\
-                    background-color: none\
-                    border-radius: 24px\
-                    color: black\
-                    height: 20px\
-                  icon:\
-                    "--mdc-icon-size": 20px\
-                    color: white\
-                    width: 20px\
-                    height: 20px\
-                    display: flex\
-                    justify-content: center\
-                    align-items: center\
-                    background: black\
-                    border-radius: 50%\
-                    margin-left: "-2px"\
-      - type: conditional\
-        conditions:\
-          - condition: state\
-            entity: sensor.sensores_ativos_na_quarto_da_olivia\
-            state_not: "2"\
-        card:\
-          type: grid\
-          square: false\
-          cards:\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.cama_olivia\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Cama Olivia\
-                    entity: binary_sensor.cama_olivia\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: input_boolean.computer_idle\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Computador Idle\
-                    entity: input_boolean.computer_idle\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.secretaria\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Secretaria\
-                    entity: binary_sensor.secretaria\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-            - type: conditional\
-              conditions:\
-                - condition: state\
-                  entity: binary_sensor.ld2410_esp32_olivia_occupancy_"on"\
-                  state: "on"\
-              card:\
-                type: custom:paper-buttons-row\
-                styles:\
-                  gap: 8px\
-                buttons:\
-                  - layout: icon|name\
-                    name: Presen\'e7a Olivia\
-                    entity: binary_sensor.ld2410_esp32_olivia_occupancy_"on"\
-                    tap_action: more-info\
-                    state_styles:\
-                      "on":\
-                        button:\
-                          background: >-\
-                            linear-gradient(45deg,\
-                            rgba(207,159,218,0.31416316526610644) 38%,\
-                            rgba(45,206,253,0.3981967787114846) 93%)\
-                        name:\
-                          background-color: none\
-                          color: black\
-                    styles:\
-                      name:\
-                        color: black\
-                        padding: 0 10px\
-                        font-size: 12px\
-                        white-space: nowrap\
-                        overflow: hidden\
-                        text-overflow: ellipsis\
-                      button:\
-                        display: flex\
-                        background-color: none\
-                        border-radius: 24px\
-                        color: black\
-                        height: 20px\
-                      icon:\
-                        "--mdc-icon-size": 20px\
-                        color: white\
-                        width: 20px\
-                        height: 20px\
-                        display: flex\
-                        justify-content: center\
-                        align-items: center\
-                        background: black\
-                        border-radius: 50%\
-                        margin-left: "-2px"\
-    grid_options:\
-      columns: 5\
-      rows: 1\
-column_span: 4\
-}
+type: grid
+cards:
+  - type: custom:gap-card
+    grid_options:
+      columns: 3
+      rows: auto
+  - type: grid
+    square: false
+    cards:
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_na_sala
+            state: "2"
+        card:
+          type: conditional
+          conditions:
+            - condition: state
+              entity: group.grupo_sensores_sala
+              state: "on"
+          card:
+            type: custom:paper-buttons-row
+            styles:
+              gap: 8px
+            buttons:
+              - layout: icon|name
+                name: Sala
+                entity: group.grupo_sensores_sala
+                state_styles:
+                  "on":
+                    button:
+                      background: >-
+                        linear-gradient(45deg, rgba(207,159,218,0.31) 38%,
+                        rgba(45,206,253,0.4) 93%)
+                    name:
+                      background-color: transparent
+                      color: black
+                styles:
+                  name:
+                    color: black
+                    padding: 0 10px
+                    font-size: 12px
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
+                  button:
+                    display: flex
+                    background-color: transparent
+                    border-radius: 24px
+                    color: black
+                    height: 20px
+                  icon:
+                    "--mdc-icon-size": 20px
+                    color: white
+                    width: 20px
+                    height: 20px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    background: black
+                    border-radius: 50%
+                    margin-left: "-2px"
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_na_sala
+            state_not: "2"
+        card:
+          type: grid
+          square: false
+          cards:
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.janela_grande_sala
+                  state: open
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Janela Sala
+                    entity: binary_sensor.janela_grande_sala
+                    state_styles:
+                      open:
+                        button:
+                          background: >-
+                            linear-gradient(45deg, rgba(207,159,218,0.31) 38%,
+                            rgba(45,206,253,0.4) 93%)
+                        name:
+                          background-color: transparent
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: transparent
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.tuya_sala_mmwave_sensor_presence
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Mmwave Sala
+                    entity: binary_sensor.tuya_sala_mmwave_sensor_presence
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg, rgba(207,159,218,0.31) 38%,
+                            rgba(45,206,253,0.4) 93%)
+                        name:
+                          background-color: transparent
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: transparent
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+    grid_options:
+      columns: 5
+      rows: 1
+  - type: grid
+    square: false
+    cards:
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_na_cozinha
+            state: "2"
+        card:
+          type: conditional
+          conditions:
+            - condition: state
+              entity: group.grupo_sensores_cozinha
+              state: "on"
+          card:
+            type: custom:paper-buttons-row
+            styles:
+              gap: 8px
+            buttons:
+              - layout: icon|name
+                name: Cozinha
+                entity: group.grupo_sensores_cozinha
+                tap_action: more-info
+                state_styles:
+                  "on":
+                    button:
+                      background: >-
+                        linear-gradient(45deg,
+                        rgba(207,159,218,0.31416316526610644) 38%,
+                        rgba(45,206,253,0.3981967787114846) 93%)
+                    name:
+                      background-color: none
+                      color: black
+                styles:
+                  name:
+                    color: black
+                    padding: 0 10px
+                    font-size: 12px
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
+                  button:
+                    display: flex
+                    background-color: none
+                    border-radius: 24px
+                    color: black
+                    height: 20px
+                  icon:
+                    "--mdc-icon-size": 20px
+                    color: white
+                    width: 20px
+                    height: 20px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    background: black
+                    border-radius: 50%
+                    margin-left: "-2px"
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_na_cozinha
+            state_not: "2"
+        card:
+          square: false
+          type: grid
+          cards:
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.ikea_motion_cozinha_occupancy
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Movimento Cozinha
+                    entity: binary_sensor.ikea_motion_cozinha_occupancy
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.st_porta_do_frigorifico_contact
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Porta Frigorífico
+                    entity: binary_sensor.st_porta_do_frigorifico_contact
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: vacuum.conga_11090_spin_revolution_home_wash
+                  state: cleaning
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Vacuum
+                    entity: vacuum.conga_11090_spin_revolution_home_wash
+                    tap_action: more-info
+                    state_styles:
+                      cleaning:
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: sensor.estado_maquina_lavar
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Máquina Lavar
+                    entity: sensor.estado_maquina_lavar
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: sensor.estado_da_torradeira
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Torradeira
+                    entity: sensor.estado_da_torradeira
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: sensor.estado_do_fervedor
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Fervedor
+                    entity: sensor.estado_do_fervedor
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: sensor.estado_do_forno
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Forno
+                    entity: sensor.estado_do_forno
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: sensor.estado_do_microondas
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Microondas
+                    entity: sensor.estado_do_microondas
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: sensor.estado_da_airfrier
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Airfrier
+                    entity: sensor.estado_da_airfrier
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+    grid_options:
+      columns: 6
+      rows: 1
+  - square: false
+    type: grid
+    cards:
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_na_despensa
+            state: "2"
+        card:
+          type: conditional
+          conditions:
+            - condition: state
+              entity: group.grupo_sensores_despensa
+              state: "on"
+          card:
+            type: custom:paper-buttons-row
+            styles:
+              gap: 8px
+            buttons:
+              - layout: icon|name
+                name: Despensa
+                entity: group.grupo_sensores_despensa
+                tap_action: more-info
+                state_styles:
+                  "on":
+                    button:
+                      background: >-
+                        linear-gradient(45deg,
+                        rgba(207,159,218,0.31416316526610644) 38%,
+                        rgba(45,206,253,0.3981967787114846) 93%)
+                    name:
+                      background-color: none
+                      color: black
+                styles:
+                  name:
+                    color: black
+                    padding: 0 10px
+                    font-size: 12px
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
+                  button:
+                    display: flex
+                    background-color: none
+                    border-radius: 24px
+                    color: black
+                    height: 20px
+                  icon:
+                    "--mdc-icon-size": 20px
+                    color: white
+                    width: 20px
+                    height: 20px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    background: black
+                    border-radius: 50%
+                    margin-left: "-2px"
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_na_despensa
+            state_not: "2"
+        card:
+          square: false
+          type: grid
+          cards:
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: sensor.estado_maquina_lavar_roupas
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Máquina Lavar
+                    entity: sensor.estado_maquina_lavar_roupas
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: sensor.estado_da_impressora_3d
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Impressora 3D
+                    entity: sensor.estado_da_impressora_3d
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.motion_dispensa_occupancy
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Despensa
+                    entity: binary_sensor.motion_dispensa_occupancy
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.st_porta_do_congelador_contact
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Congelador
+                    entity: binary_sensor.st_porta_do_congelador_contact
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.wc_gato_vibration
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Gato WC
+                    entity: binary_sensor.wc_gato_vibration
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+    grid_options:
+      columns: 6
+      rows: 1
+  - type: grid
+    square: false
+    cards:
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_no_corredor
+            state: "2"
+        card:
+          type: horizontal-stack
+          cards:
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: group.grupo_sensores_corredor
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Corredor
+                    entity: group.grupo_sensores_corredor
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_no_corredor
+            state_not: "2"
+        card:
+          type: grid
+          square: false
+          cards:
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.lidl_motion_corredor_baixo_occupancy
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Escadas Baixo
+                    entity: binary_sensor.lidl_motion_corredor_baixo_occupancy
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.motion_corredor_cima_occupancy
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Corredor Cima
+                    entity: binary_sensor.motion_corredor_cima_occupancy
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.ikea_casa_de_banho_occupancy
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Corredor de Baixo
+                    entity: binary_sensor.ikea_casa_de_banho_occupancy
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.tuya_porta_de_casa_sensor_contact
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Porta de Casa
+                    entity: binary_sensor.tuya_porta_de_casa_sensor_contact
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+    grid_options:
+      columns: 6
+      rows: 1
+  - square: false
+    type: grid
+    cards:
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_no_wc
+            state: "2"
+        card:
+          type: conditional
+          conditions:
+            - condition: state
+              entity: group.grupo_sensores_wc
+              state: "on"
+          card:
+            type: custom:paper-buttons-row
+            styles:
+              gap: 8px
+            buttons:
+              - layout: icon|name
+                name: WC
+                entity: group.grupo_sensores_wc
+                tap_action: more-info
+                state_styles:
+                  "on":
+                    button:
+                      background: >-
+                        linear-gradient(45deg,
+                        rgba(207,159,218,0.31416316526610644) 38%,
+                        rgba(45,206,253,0.3981967787114846) 93%)
+                    name:
+                      background-color: none
+                      color: black
+                styles:
+                  name:
+                    color: black
+                    padding: 0 10px
+                    font-size: 12px
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
+                  button:
+                    display: flex
+                    background-color: none
+                    border-radius: 24px
+                    color: black
+                    height: 20px
+                  icon:
+                    "--mdc-icon-size": 20px
+                    color: white
+                    width: 20px
+                    height: 20px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    background: black
+                    border-radius: 50%
+                    margin-left: "-2px"
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_no_wc
+            state_not: "2"
+        card:
+          type: grid
+          square: false
+          cards:
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.janela_psala
+                  state: open
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Janela WC
+                    icon: mdi:window-closed
+                    entity: binary_sensor.janela_psala
+                    tap_action: more-info
+                    state_styles:
+                      open:
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.tuya_wc_mmwave_sensor_presence
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Presença WC
+                    entity: binary_sensor.tuya_wc_mmwave_sensor_presence
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 34px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: sensor.estado_aquecedor_wc
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Aquecedor WC
+                    entity: sensor.estado_aquecedor_wc
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 34px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+    grid_options:
+      columns: 5
+      rows: 1
+  - square: false
+    type: grid
+    cards:
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_na_quarto
+            state: "2"
+        card:
+          type: conditional
+          conditions:
+            - condition: state
+              entity: group.grupo_sensores_quarto
+              state: "on"
+          card:
+            type: custom:paper-buttons-row
+            styles:
+              gap: 8px
+            buttons:
+              - layout: icon|name
+                name: Quarto
+                entity: group.grupo_sensores_quarto
+                tap_action: more-info
+                state_styles:
+                  "on":
+                    button:
+                      background: >-
+                        linear-gradient(45deg,
+                        rgba(207,159,218,0.31416316526610644) 38%,
+                        rgba(45,206,253,0.3981967787114846) 93%)
+                    name:
+                      background-color: none
+                      color: black
+                styles:
+                  name:
+                    color: black
+                    padding: 0 10px
+                    font-size: 12px
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
+                  button:
+                    display: flex
+                    background-color: none
+                    border-radius: 24px
+                    color: black
+                    height: 20px
+                  icon:
+                    "--mdc-icon-size": 20px
+                    color: white
+                    width: 20px
+                    height: 20px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    background: black
+                    border-radius: 50%
+                    margin-left: "-2px"
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_na_quarto
+            state_not: "2"
+        card:
+          type: grid
+          square: false
+          cards:
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.tuya_quarto_mmwave_sensor_presence
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Quarto
+                    entity: binary_sensor.tuya_quarto_mmwave_sensor_presence
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: sensor.tuya_quarto_mmwave_sensor_presence_state
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: mmwave quarto
+                    entity: sensor.tuya_quarto_mmwave_sensor_presence_state
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.janela_do_quarto_contact
+                  state: open
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Janela Quarto
+                    entity: binary_sensor.janela_do_quarto_contact
+                    tap_action: more-info
+                    state_styles:
+                      open:
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.cama_pais
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Cama Pais
+                    entity: binary_sensor.cama_pais
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+    grid_options:
+      columns: 6
+      rows: 1
+  - square: false
+    type: grid
+    cards:
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_na_quarto_da_olivia
+            state: "2"
+        card:
+          type: conditional
+          conditions:
+            - condition: state
+              entity: group.grupo_sensores_qolivia
+              state: "on"
+          card:
+            type: custom:paper-buttons-row
+            styles:
+              gap: 8px
+            buttons:
+              - layout: icon|name
+                name: Quarto Olivia
+                entity: group.grupo_sensores_qolivia
+                tap_action: more-info
+                state_styles:
+                  "on":
+                    button:
+                      background: >-
+                        linear-gradient(45deg,
+                        rgba(207,159,218,0.31416316526610644) 38%,
+                        rgba(45,206,253,0.3981967787114846) 93%)
+                    name:
+                      background-color: none
+                      color: black
+                styles:
+                  name:
+                    color: black
+                    padding: 0 10px
+                    font-size: 12px
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
+                  button:
+                    display: flex
+                    background-color: none
+                    border-radius: 24px
+                    color: black
+                    height: 20px
+                  icon:
+                    "--mdc-icon-size": 20px
+                    color: white
+                    width: 20px
+                    height: 20px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    background: black
+                    border-radius: 50%
+                    margin-left: "-2px"
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.sensores_ativos_na_quarto_da_olivia
+            state_not: "2"
+        card:
+          type: grid
+          square: false
+          cards:
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.cama_olivia
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Cama Olivia
+                    entity: binary_sensor.cama_olivia
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: input_boolean.computer_idle
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Computador Idle
+                    entity: input_boolean.computer_idle
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.secretaria
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Secretaria
+                    entity: binary_sensor.secretaria
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+            - type: conditional
+              conditions:
+                - condition: state
+                  entity: binary_sensor.ld2410_esp32_olivia_occupancy_"on"
+                  state: "on"
+              card:
+                type: custom:paper-buttons-row
+                styles:
+                  gap: 8px
+                buttons:
+                  - layout: icon|name
+                    name: Presença Olivia
+                    entity: binary_sensor.ld2410_esp32_olivia_occupancy_"on"
+                    tap_action: more-info
+                    state_styles:
+                      "on":
+                        button:
+                          background: >-
+                            linear-gradient(45deg,
+                            rgba(207,159,218,0.31416316526610644) 38%,
+                            rgba(45,206,253,0.3981967787114846) 93%)
+                        name:
+                          background-color: none
+                          color: black
+                    styles:
+                      name:
+                        color: black
+                        padding: 0 10px
+                        font-size: 12px
+                        white-space: nowrap
+                        overflow: hidden
+                        text-overflow: ellipsis
+                      button:
+                        display: flex
+                        background-color: none
+                        border-radius: 24px
+                        color: black
+                        height: 20px
+                      icon:
+                        "--mdc-icon-size": 20px
+                        color: white
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: black
+                        border-radius: 50%
+                        margin-left: "-2px"
+    grid_options:
+      columns: 5
+      rows: 1
+column_span: 4
